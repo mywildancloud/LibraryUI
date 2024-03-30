@@ -67,7 +67,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-library-ui.php';
 /**
  * add nuxy framework form theme options
  */
-require_once(dirname(__FILE__) . '/wpcfto/NUXY.php');
+require_once(dirname(__FILE__) . '/NUXY.php');
 
 /**
  * Begins execution of the plugin.
