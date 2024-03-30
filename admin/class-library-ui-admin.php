@@ -137,13 +137,53 @@ add_filter('wpcfto_options_page_setup', function ($setups) {
 				'label' => esc_html__('Dashboard', 'my-domain'),
 				'fields' => array(
                     // Field key and its settings. Full info about fields read in documentation.
-                    'awesome_1' => array(
-                        'type' => 'text',
-                        'label' => esc_html__('Awesome Field label', 'my-domain'),
-                        'value' => 'Awesome default value',
-                    ),
-                )
-            ),
+                    'message_youtube' => array(
+    					'type' => 'notification_message',
+						'icon' => 'fab fa-youtube',
+    					'description' => sprintf( '
+        					<h1>Tutorials</h1> 
+        					<p>Watch tutorials for using the plugin on the YouTube channel.</p>
+        					' ),
+    					'buttons' => array (
+        					array(
+            				'url' => "https://youtube.com",
+            				'text' => esc_html__('Watch Tutorials', 'subdomain'),
+            				'class' => 'button_black'
+        						),
+    						)
+						),
+					'message_group_support' => array(
+    					'type' => 'notification_message',
+						'icon' => 'fa fa-users-rectangle',
+    					'description' => sprintf( '
+        					<h1>Group Support</h1> 
+        					<p>Discussions between members and exchanging information about using plugins.</p>
+        					' ),
+    					'buttons' => array (
+        					array(
+            				'url' => "https://telegram.com",
+            				'text' => esc_html__('Group Support', 'subdomain'),
+            				'class' => 'button_black'
+        						),
+    						)
+						),
+					'message_ticket' => array(
+    					'type' => 'notification_message',
+						'icon' => 'fa fa-life-ring',
+    					'description' => sprintf( '
+        					<h1>Submit a Ticket</h1> 
+        					<p>If you experience problems in use and find bugs, please create a ticket.</p>
+        					' ),
+    					'buttons' => array (
+        					array(
+            				'url' => "https://telegram.com",
+            				'text' => esc_html__('Submit a Ticket', 'subdomain'),
+            				'class' => 'button_black'
+        						),
+    						)
+						),
+                    )
+				),
 			'lui_general' => array(
                 // And its name obviously
                 'icon' => 'fa fa-lightbulb',
@@ -151,10 +191,36 @@ add_filter('wpcfto_options_page_setup', function ($setups) {
 				'label' => esc_html__('General Setting', 'my-domain'),
 				'fields' => array(
                     // Field key and its settings. Full info about fields read in documentation.
-                    'awesome_1' => array(
+                    'lui_title' => array(
                         'type' => 'text',
-                        'label' => esc_html__('Awesome Field label', 'my-domain'),
-                        'value' => 'Awesome default value',
+                        'label' => esc_html__('Site Title', 'my-domain'),
+                        'hint'    => esc_html__( 'this is the title of your website', 'my-domain' ),
+                    ),
+					'lui_tagline' => array(
+                        'type' => 'textarea',
+                        'label' => esc_html__('Tagline', 'my-domain'),
+                        'hint'    => esc_html__( 'this is the tagline of your website', 'my-domain' ),
+                    ),
+					'lui_logo' => array(
+                        'type' => 'image',
+                        'label' => esc_html__('Logo Light', 'my-domain'),
+                        'description'    => esc_html__( 'logo will be used for light mode', 'my-domain' ),
+                    ),
+					'lui_logo_dark' => array(
+                        'type' => 'image',
+                        'label' => esc_html__('Logo Dark', 'my-domain'),
+                        'description'    => esc_html__( 'logo will be used for dark mode', 'my-domain' ),
+                    ),
+					'lui_favicon' => array(
+                        'type' => 'image',
+                        'label' => esc_html__('Favicon', 'my-domain'),
+                    ),
+					'lui_shortcode' => array(
+                        'type' => 'text',
+                        'label' => esc_html__('Shortcode', 'my-domain'),
+						'description'    => esc_html__( 'copy the shortcode then paste it into any page builder to display the darkmode toggle', 'my-domain' ),
+						'value' => '[darkmode]',
+						'readonly' => true,
                     ),
                 )
             ),
