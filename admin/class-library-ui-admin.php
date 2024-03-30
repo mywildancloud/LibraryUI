@@ -101,3 +101,126 @@ class Library_Ui_Admin {
 	}
 
 }
+
+add_filter('wpcfto_options_page_setup', function ($setups) {
+    $setups[] = array(
+        /*
+         * Here we specify option name. It will be a key for storing in wp_options table
+         */
+        'option_name' => 'lui_settings',
+        
+        'title' => esc_html__('Library UI', 'my-domain'),
+        'sub_title' => esc_html__('by LibraryUI.cloud', 'my-domain'),
+        'logo' => 'https://library.addonsejoli.pro/wp-content/uploads/2024/02/Pasted-image-at-2023-01-24-at-14.37.01-PM.png',
+
+        /*
+         * Next we add a page to display our awesome settings.
+         * All parameters are required and same as WordPress add_menu_page.
+         */
+        'page' => array(
+            'page_title' => 'Library UI',
+            'menu_title' => 'Library UI',
+            'menu_slug' => 'lui_options_settings',
+            'icon' => 'dashicons-sos',
+            'position' => 40,
+        ),
+
+        /*
+         * And Our fields to display on a page. We use tabs to separate settings on groups.
+         */
+        'fields' => array(
+            // tabs menu
+            'lui_home' => array(
+                // And its name obviously
+                'icon' => 'fa fa-meteor',
+                'name' => esc_html__('Dashboard', 'my-domain'),
+				'label' => esc_html__('Dashboard', 'my-domain'),
+				'fields' => array(
+                    // Field key and its settings. Full info about fields read in documentation.
+                    'awesome_1' => array(
+                        'type' => 'text',
+                        'label' => esc_html__('Awesome Field label', 'my-domain'),
+                        'value' => 'Awesome default value',
+                    ),
+                )
+            ),
+			'lui_general' => array(
+                // And its name obviously
+                'icon' => 'fa fa-lightbulb',
+                'name' => esc_html__('General', 'my-domain'),
+				'label' => esc_html__('General Setting', 'my-domain'),
+				'fields' => array(
+                    // Field key and its settings. Full info about fields read in documentation.
+                    'awesome_1' => array(
+                        'type' => 'text',
+                        'label' => esc_html__('Awesome Field label', 'my-domain'),
+                        'value' => 'Awesome default value',
+                    ),
+                )
+            ),
+			'lui_typography' => array(
+                // And its name obviously
+                'icon' => 'fa fa-font',
+                'name' => esc_html__('Typography', 'my-domain'),
+				'label' => esc_html__('Typography', 'my-domain'),
+				'fields' => array(
+                    // Field key and its settings. Full info about fields read in documentation.
+                    'awesome_1' => array(
+                        'type' => 'text',
+                        'label' => esc_html__('Awesome Field label', 'my-domain'),
+                        'value' => 'Awesome default value',
+                    ),
+                )
+            ),
+			'lui_colors' => array(
+                // And its name obviously
+                'icon' => 'fa fa-palette',
+                'name' => esc_html__('Colors', 'my-domain'),
+				'label' => esc_html__('Global Colors', 'my-domain'),
+				'fields' => array(
+                    // Field key and its settings. Full info about fields read in documentation.
+                    'awesome_1' => array(
+                        'type' => 'text',
+                        'label' => esc_html__('Awesome Field label', 'my-domain'),
+                        'value' => 'Awesome default value',
+                    ),
+                )
+            ),
+			'lui_spacings' => array(
+                // And its name obviously
+                'icon' => 'fa fa-up-right-and-down-left-from-center',
+                'name' => esc_html__('Spacings', 'my-domain'),
+				'label' => esc_html__('Margin and Padding', 'my-domain'),
+				'fields' => array(
+                    // Field key and its settings. Full info about fields read in documentation.
+                    'awesome_1' => array(
+                        'type' => 'text',
+                        'label' => esc_html__('Awesome Field label', 'my-domain'),
+                        'value' => 'Awesome default value',
+                    ),
+                )
+            ),
+			'lui_custom_css' => array(
+                // And its name obviously
+                'icon' => 'fa fa-code',
+                'name' => esc_html__('Custom CSS', 'my-domain'),
+				'label' => esc_html__('Custom CSS', 'my-domain'),
+				'fields' => array(
+                    // Field key and its settings. Full info about fields read in documentation.
+                    'awesome_1' => array(
+                        'type' => 'text',
+                        'label' => esc_html__('Awesome Field label', 'my-domain'),
+                        'value' => 'Awesome default value',
+                    ),
+                )
+            ),
+        )
+    );
+
+    return $setups;
+});
+
+$lui_options = get_option('lui_settings', array());
+/*
+ * Where 'my_awesome_settings' is the same setup option name.
+ */
