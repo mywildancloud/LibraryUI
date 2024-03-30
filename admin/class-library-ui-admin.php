@@ -231,11 +231,159 @@ add_filter('wpcfto_options_page_setup', function ($setups) {
 				'label' => esc_html__('Typography', 'my-domain'),
 				'fields' => array(
                     // Field key and its settings. Full info about fields read in documentation.
-                    'awesome_1' => array(
-                        'type' => 'text',
-                        'label' => esc_html__('Awesome Field label', 'my-domain'),
-                        'value' => 'Awesome default value',
-                    ),
+                    'lui_h1' => array(
+    					'type' => 'typography',
+    					'label' => esc_html__('H1', 'my-domain'),
+						'description' => esc_html__('Display H1', 'my-domain'),
+						'value' => [
+							'color' => '#010101',
+							'font-family' => 'Inter',
+							'text-transform' => 'capitalize',
+							'font-size' => '36',
+							],
+    					'excluded' => array(
+        					'subset',
+        					'backup-font',
+							'preview',
+							'text-align',
+    					)
+					),
+					'lui_h2' => array(
+    					'type' => 'typography',
+    					'label' => esc_html__('H2', 'my-domain'),
+						'description' => esc_html__('Display H2', 'my-domain'),
+						'value' => [
+							'color' => '#010101',
+							'font-family' => 'Inter',
+							'text-transform' => 'capitalize',
+							'font-size' => '32',
+							],
+    					'excluded' => array(
+        					'subset',
+        					'backup-font',
+							'preview',
+							'text-align',
+    					)
+					),
+					'lui_h3' => array(
+    					'type' => 'typography',
+    					'label' => esc_html__('H3', 'my-domain'),
+						'description' => esc_html__('Display H3', 'my-domain'),
+						'value' => [
+							'color' => '#010101',
+							'font-family' => 'Inter',
+							'text-transform' => 'capitalize',
+							'font-size' => '28',
+							],
+    					'excluded' => array(
+        					'subset',
+        					'backup-font',
+							'preview',
+							'text-align',
+    					)
+					),
+					'lui_h4' => array(
+    					'type' => 'typography',
+    					'label' => esc_html__('H4', 'my-domain'),
+						'description' => esc_html__('Display H4', 'my-domain'),
+						'value' => [
+							'color' => '#010101',
+							'font-family' => 'Inter',
+							'text-transform' => 'capitalize',
+							'font-size' => '20',
+							],
+    					'excluded' => array(
+        					'subset',
+        					'backup-font',
+							'preview',
+							'text-align',
+    					)
+					),
+					'lui_h5' => array(
+    					'type' => 'typography',
+    					'label' => esc_html__('H5', 'my-domain'),
+						'description' => esc_html__('Display H5', 'my-domain'),
+						'value' => [
+							'color' => '#010101',
+							'font-family' => 'Inter',
+							'text-transform' => 'capitalize',
+							'font-size' => '20',
+							],
+    					'excluded' => array(
+        					'subset',
+        					'backup-font',
+							'preview',
+							'text-align',
+    					)
+					),
+					'lui_h6' => array(
+    					'type' => 'typography',
+    					'label' => esc_html__('H6', 'my-domain'),
+						'description' => esc_html__('Display H6', 'my-domain'),
+						'value' => [
+							'color' => '#010101',
+							'font-family' => 'Inter',
+							'text-transform' => 'capitalize',
+							'font-size' => '16',
+							],
+    					'excluded' => array(
+        					'subset',
+        					'backup-font',
+							'preview',
+							'text-align',
+    					)
+					),
+					'lui_span' => array(
+    					'type' => 'typography',
+    					'label' => esc_html__('Span', 'my-domain'),
+						'description' => esc_html__('Display Span', 'my-domain'),
+						'value' => [
+							'color' => '#4338ca',
+							'font-family' => 'Inter',
+							'text-transform' => 'capitalize',
+							'font-size' => '14',
+							],
+    					'excluded' => array(
+        					'subset',
+        					'backup-font',
+							'preview',
+							'text-align',
+    					)
+					),
+					'lui_p' => array(
+    					'type' => 'typography',
+    					'label' => esc_html__('Paragraph', 'my-domain'),
+						'description' => esc_html__('Paragraph', 'my-domain'),
+						'value' => [
+							'color' => '#333',
+							'font-family' => 'Open Sans',
+							'text-transform' => 'lowercase',
+							'font-size' => '14',
+							],
+    					'excluded' => array(
+        					'subset',
+        					'backup-font',
+							'preview',
+							'text-align',
+    					)
+					),
+					'lui_btn_text' => array(
+    					'type' => 'typography',
+    					'label' => esc_html__('Button', 'my-domain'),
+						'description' => esc_html__('Text Color for button', 'my-domain'),
+						'value' => [
+							'color' => '#FFF',
+							'font-family' => 'Open Sans',
+							'text-transform' => 'lowercase',
+							'font-size' => '14',
+							],
+    					'excluded' => array(
+        					'subset',
+        					'backup-font',
+							'preview',
+							'text-align',
+    					)
+					),
                 )
             ),
 			'lui_colors' => array(
@@ -245,11 +393,74 @@ add_filter('wpcfto_options_page_setup', function ($setups) {
 				'label' => esc_html__('Global Colors', 'my-domain'),
 				'fields' => array(
                     // Field key and its settings. Full info about fields read in documentation.
-                    'awesome_1' => array(
-                        'type' => 'text',
-                        'label' => esc_html__('Awesome Field label', 'my-domain'),
-                        'value' => 'Awesome default value',
-                    ),
+                    'lui_background' => array(
+   					'type' => 'color',
+   					'label' => esc_html__( 'Background', 'my-domain' ),
+					'description' => esc_html__( 'set the color for the background.', 'my-domain' ),
+					'value' => '#FFF',
+						),
+					'lui_text-color' => array(
+   					'type' => 'color',
+   					'label' => esc_html__( 'Text Color', 'my-domain' ),
+					'description' => esc_html__( 'set the color for the text color.', 'my-domain' ),
+					'value' => '#333',
+						),
+					'lui_body' => array(
+   					'type' => 'color',
+   					'label' => esc_html__( 'Body', 'my-domain' ),
+					'description' => esc_html__( 'set the color for the body.', 'my-domain' ),
+					'value' => '#FFF',
+						),
+					'lui_sidebar' => array(
+   					'type' => 'color',
+   					'label' => esc_html__( 'Sidebar', 'my-domain' ),
+					'description' => sprintf( '<p>to use sidebar colors use css classes <strong>lui--sidebar</strong></p>'),
+					'value' => '#FFF',
+						),
+					'lui_topbar' => array(
+   					'type' => 'color',
+   					'label' => esc_html__( 'Topbar', 'my-domain' ),
+					'description' => sprintf( '<p>to use topbar colors use css classes <strong>lui--topbar</strong></p>'),
+					'value' => '#FFF',
+						),
+					'lui_bottombar' => array(
+   					'type' => 'color',
+   					'label' => esc_html__( 'Bottombar', 'my-domain' ),
+					'description' => sprintf( '<p>to use bottombar colors use css classes <strong>lui--bottombar</strong></p>'),
+					'value' => '#FFF',
+						),
+					'lui_container' => array(
+   					'type' => 'color',
+   					'label' => esc_html__( 'Container', 'my-domain' ),
+					'description' => sprintf( '<p>to use container colors use css classes <strong>lui--container</strong></p>'),
+					'value' => '#FFF',
+						),
+					'lui_cards' => array(
+   					'type' => 'color',
+   					'label' => esc_html__( 'Cards', 'my-domain' ),
+					'description' => sprintf( '<p>to use cards colors use css classes <strong>lui--cards</strong></p>'),
+					'value' => '#f1f5f9',
+						),
+					'lui_link' => array(
+    				'type' => 'link_color',
+    				'label' => esc_html__( 'Link Color', 'my-domain' ),
+    				'value' => [
+        				'regular'  => '#020617',
+        				'hover'    => '#6366f1',
+        				'active'   => '#4f46e5',
+    						],
+    				'description' => esc_html__( 'configure link text color.', 'my-domain' ),
+						),
+					'lui_btn_bg' => array(
+    				'type' => 'link_color',
+    				'label' => esc_html__( 'Button', 'my-domain' ),
+    				'value' => [
+        				'regular'  => '#020617',
+        				'hover'    => '#6366f1',
+        				'active'   => '#4f46e5',
+    						],
+    				'description' => esc_html__( 'configure background color for button.', 'my-domain' ),
+						),
                 )
             ),
 			'lui_spacings' => array(
@@ -259,12 +470,35 @@ add_filter('wpcfto_options_page_setup', function ($setups) {
 				'label' => esc_html__('Margin and Padding', 'my-domain'),
 				'fields' => array(
                     // Field key and its settings. Full info about fields read in documentation.
-                    'awesome_1' => array(
-                        'type' => 'text',
-                        'label' => esc_html__('Awesome Field label', 'my-domain'),
-                        'value' => 'Awesome default value',
-                    ),
-                )
+                    'lui_margin' => array(
+    				'type' => 'spacing',
+    				'label' => esc_html__( 'Margin', 'my-domain' ),
+    				'units' => ['px', 'em', 'rem'],
+    				'value' => [
+        				'top' => '10',
+        				'right' => '20',
+        				'bottom' => '30',
+        				'left' => '40',
+        				'unit' => 'px',
+    					],
+    				'description' => sprintf( '<p>set the distance between elements more consistently, use CSS classes <strong>m--t m--b m--y m--x</strong></p>'),
+					'hint' => esc_html__( 'example: used m--t to provide margin-top.', 'my-domain' ),
+						),
+					'lui_padding' => array(
+    				'type' => 'spacing',
+    				'label' => esc_html__( 'Padding', 'my-domain' ),
+    				'units' => ['px', 'em', 'rem'],
+    				'value' => [
+        				'top' => '10',
+        				'right' => '20',
+        				'bottom' => '30',
+        				'left' => '40',
+        				'unit' => 'px',
+    					],
+    				'description' => sprintf( '<p>set the distance between elements more consistently, use CSS classes <strong>p--t p--b p--y p--x</strong></p>'),
+					'hint' => esc_html__( 'example: used p--t to provide padding-top.', 'my-domain' ),
+						),
+                	)
             ),
 			'lui_custom_css' => array(
                 // And its name obviously
@@ -273,11 +507,12 @@ add_filter('wpcfto_options_page_setup', function ($setups) {
 				'label' => esc_html__('Custom CSS', 'my-domain'),
 				'fields' => array(
                     // Field key and its settings. Full info about fields read in documentation.
-                    'awesome_1' => array(
-                        'type' => 'text',
-                        'label' => esc_html__('Awesome Field label', 'my-domain'),
-                        'value' => 'Awesome default value',
-                    ),
+                    'lui_edtior_css' => array(
+    				'type' => 'ace_editor',
+    				'label' => esc_html__('CSS', 'my-domain'),
+					'description' => esc_html__( 'example: used .container for css classes or used #content for css id.', 'my-domain' ),
+    				'lang' => 'css',
+						),
                 )
             ),
         )
