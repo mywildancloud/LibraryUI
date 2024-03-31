@@ -231,9 +231,26 @@ add_filter('wpcfto_options_page_setup', function ($setups) {
 				'label' => esc_html__('Typography', 'my-domain'),
 				'fields' => array(
                     // Field key and its settings. Full info about fields read in documentation.
-                    'lui_h1' => array(
+                    'lui_display' => array(
     					'type' => 'typography',
-    					'label' => esc_html__('H1', 'my-domain'),
+    					'label' => esc_html__('Display', 'my-domain'),
+						'description' => esc_html__('used for display headlines', 'my-domain'),
+						'value' => [
+							'color' => '#010101',
+							'font-family' => 'Inter',
+							'text-transform' => 'capitalize',
+							'font-size' => '48',
+							],
+    					'excluded' => array(
+        					'subset',
+        					'backup-font',
+							'preview',
+							'text-align',
+    					)
+					),
+					'lui_h1' => array(
+    					'type' => 'typography',
+    					'label' => esc_html__('Heading 1', 'my-domain'),
 						'description' => esc_html__('Display H1', 'my-domain'),
 						'value' => [
 							'color' => '#010101',
@@ -250,7 +267,7 @@ add_filter('wpcfto_options_page_setup', function ($setups) {
 					),
 					'lui_h2' => array(
     					'type' => 'typography',
-    					'label' => esc_html__('H2', 'my-domain'),
+    					'label' => esc_html__('Heading 2', 'my-domain'),
 						'description' => esc_html__('Display H2', 'my-domain'),
 						'value' => [
 							'color' => '#010101',
@@ -267,7 +284,7 @@ add_filter('wpcfto_options_page_setup', function ($setups) {
 					),
 					'lui_h3' => array(
     					'type' => 'typography',
-    					'label' => esc_html__('H3', 'my-domain'),
+    					'label' => esc_html__('Heading 3', 'my-domain'),
 						'description' => esc_html__('Display H3', 'my-domain'),
 						'value' => [
 							'color' => '#010101',
@@ -284,7 +301,7 @@ add_filter('wpcfto_options_page_setup', function ($setups) {
 					),
 					'lui_h4' => array(
     					'type' => 'typography',
-    					'label' => esc_html__('H4', 'my-domain'),
+    					'label' => esc_html__('Heading 4', 'my-domain'),
 						'description' => esc_html__('Display H4', 'my-domain'),
 						'value' => [
 							'color' => '#010101',
@@ -301,7 +318,7 @@ add_filter('wpcfto_options_page_setup', function ($setups) {
 					),
 					'lui_h5' => array(
     					'type' => 'typography',
-    					'label' => esc_html__('H5', 'my-domain'),
+    					'label' => esc_html__('Heading 5', 'my-domain'),
 						'description' => esc_html__('Display H5', 'my-domain'),
 						'value' => [
 							'color' => '#010101',
@@ -318,7 +335,7 @@ add_filter('wpcfto_options_page_setup', function ($setups) {
 					),
 					'lui_h6' => array(
     					'type' => 'typography',
-    					'label' => esc_html__('H6', 'my-domain'),
+    					'label' => esc_html__('Heading 6', 'my-domain'),
 						'description' => esc_html__('Display H6', 'my-domain'),
 						'value' => [
 							'color' => '#010101',
